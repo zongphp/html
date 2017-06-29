@@ -1,0 +1,20 @@
+{
+  "name": "zongphp/html",
+  "description": "html组件用于生成静态文件",
+  "type": "project",
+  "keywords": [
+    "html",
+    "生成页面静态文件"
+  ],
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "files": [],
+    "psr-4": {
+      "zongphp\\html\\": "src"
+    }
+  }
+}
