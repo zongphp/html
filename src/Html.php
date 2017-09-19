@@ -1,5 +1,6 @@
 <?php
 namespace zongphp\html;
+use zongphp\html\build\Base;
 
 class Html {
 	protected $link;
