@@ -1,15 +1,16 @@
 {
   "name": "zongphp/html",
   "description": "html组件用于生成静态文件",
-  "type": "project",
   "keywords": [
+    "zongphp",
     "html",
     "生成页面静态文件"
   ],
   "license": "MIT",
   "minimum-stability": "stable",
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "zongphp/request": "~2.0"
   },
   "autoload": {
     "files": [],

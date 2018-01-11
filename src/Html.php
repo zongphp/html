@@ -1,34 +1,40 @@
 <?php
 namespace zongphp\html;
+
 use zongphp\html\build\Base;
 
-class Html {
-	protected $link;
+class Html
+{
+    protected static $link;
 
-	protected function driver() {
-		$this->link = new Base();
+    protected function driver()
+    {
+        self::$link = new Base();
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function __call( $method, $params ) {
-		if ( is_null( $this->link ) ) {
-			$this->driver();
-		}
+    public function __call($method, $params)
+    {
+        if (is_null(self::$link)) {
+            $this->driver();
+        }
 
-		return call_user_func_array( [ $this->link, $method ], $params );
-	}
+        return call_user_func_array([self::$link, $method], $params);
+    }
 
-	public static function single() {
-		static $link;
-		if ( is_null( $link ) ) {
-			$link = new static();
-		}
+    public static function single()
+    {
+        static $link;
+        if (is_null($link)) {
+            $link = new static();
+        }
 
-		return $link;
-	}
+        return $link;
+    }
 
-	public static function __callStatic( $name, $arguments ) {
-		return call_user_func_array( [ static::single(), $name ], $arguments );
-	}
+    public static function __callStatic($name, $arguments)
+    {
+        return call_user_func_array([static::single(), $name], $arguments);
+    }
 }
